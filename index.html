@@ -1,11 +1,241 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>P-Ticket</title>
-</head>
-<body>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              "roboto-sans": ['"Roboto"', "sans-serif"],
+            },
+            colors: {
+              "light-green": "#1dd100",
+              "light-green-600": "rgba(29,209,0, 0.6)",
+              "light-green-500": "rgba(29,209,0, 0.5)",
+              "light-green-400": "rgba(29,209,0, 0.4)",
+              "light-green-200": "rgba(29,209,0, 0.2)",
+              "light-green-100": "rgba(29,209,0, 0.1)",
+              "c-orange": "#FFBF0F",
+              "rose-pink": "#F78C9C",
+              "white-800": "rgba(255,255,255,0.8)",
+              "white-700": "rgba(255,255,255,0.7)",
+              "c-gray": "#030712",
+              "l-black-600": "rgba(0,0,0,0.6)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="roboto-sans">
+    <header class="container mx-auto">
+      <div class="navbar bg-base-100">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-5 w-5"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h8m-8 6h16"
+                />
+              </svg>
+            </div>
+            <ul
+              tabindex="0"
+              class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            >
+              <li><a>Home</a></li>
+              <li><a>About</a></li>
+              <li><a>Destination</a></li>
+              <li><a>Search</a></li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost text-xl">P-Ticket</a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1">
+            <li><a>Home</a></li>
+            <li><a>About</a></li>
+            <li><a>Destination</a></li>
+            <li><a>Search</a></li>
+          </ul>
+        </div>
+        <div class="navbar-end">
+          <a
+            class="btn ring-2 ring-light-green-600 bg-light-green-100 text-light-green"
+            >Bus <span class="w-5"><img src="/images/bus-icon.png" /> </span>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <section class="container mx-auto my-4">
+      <div
+        class="hero min-h-screen rounded-lg box-border"
+        style="background-image: url(/images/banner.png)"
+      >
+        <div class="hero-overlay bg-opacity-60"></div>
+        <div class="hero-content text-center text-neutral-content">
+          <div class="max-w-md">
+            <h1 class="mb-5 text-5xl font-bold">Hello there</h1>
+            <p class="mb-5">
+              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
+              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
+              et a id nisi.
+            </p>
+            <button class="btn btn-primary">Get Started</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mx-auto container flex flex-col gap-6">
+      <div class="text-center text-black">
+        <h2 class="font-semibold text-xl">Best offers for you</h2>
+      </div>
+      <div class="flex flex-row gap-4 items-center">
+        <div
+          class="bg-orange-500 w-1/2 flex flex-row gap-3 justify-around rounded-lg"
+        >
+          <div>
+            <h3>15% OFF</h3>
+            <h4>on your next purchase</h4>
+            <p>use by January 2024</p>
+          </div>
+          <div>
+            <h2>NEW15</h2>
+            <p>Coupon Code</p>
+          </div>
+        </div>
+        <div
+          class="bg-rose-500 w-1/2 flex flex-row gap-3 justify-around rounded-lg"
+        >
+          <div>
+            <h3>20% OFF</h3>
+            <h4>on your next purchase</h4>
+            <p>use by January 2024</p>
+          </div>
+          <div>
+            <h2>Couple 20</h2>
+            <p>Coupon Code</p>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <button
+          class="btn ring-2 ring-light-green-600 bg-light-green-100 text-light-green"
+        >
+          See All Offers
+        </button>
+      </div>
+    </section>
+
+    <section class="w-full">
+      <div class="rounded-t-xl border-[#1dd100] border-2 bg-[#f7f8f8] p-5">
+        <div class="mt-8 items-center text-center">
+          <h1 class="text-4xl font-bold">P.H Paribahan</h1>
+          <p class="my-5 text-lg font-medium">
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+
+        <!-- Calculate Start -->
+        <div
+          class="card w-full box-border flex flex-row items-center justify-between bg-white"
+        >
+          <div class="card-body w-4/5">
+            <div class="flex flex-row items-center mb-5">
+              <div class="w-3/4">
+                <h2 class="text-3xl font-bold">P.H Paribahan</h2>
+                <small class="text-lg font-medium">Coach-005 | None Ac</small>
+              </div>
+              <div class="w-1/4">
+                <span class="seat-left">40</span> Seats left
+              </div>
+            </div>
+
+            <div class="card w-full">
+              <div class="card-body bg-[#f7f8f8] rounded-2xl">
+                <div
+                  class="flex flex-row justify-between gap-2 px-4 border-b-2 border-dashed py-4 mb-4"
+                >
+                  <div class="text-gray-500 font-semibold">Route</div>
+                  <div class="text-gray-700 font-bold">Dhaka-Sylhet</div>
+                </div>
+
+                <div
+                  class="flex flex-row justify-between gap-2 px-4 border-b-2 border-dashed py-4 mb-4"
+                >
+                  <div class="text-gray-500 font-semibold">Departure Time</div>
+                  <div class="text-gray-700 font-bold">09:00 PM</div>
+                </div>
+                <div class="flex flex-row justify-between box-border p-4 gap-4">
+                  <div class="w-1/3">
+                    <button class="btn btn-active w-full">
+                      Boarding Point - Laxmipur
+                    </button>
+                  </div>
+                  <div class="w-1/3">
+                    <button class="btn btn-active w-full">
+                      Dropping Point - Bogura
+                    </button>
+                  </div>
+                  <div class="w-1/3">
+                    <button class="btn btn-active w-full">
+                      Est. Time - 11 Hou
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="calculateamount w-1/5">
+            <div
+              class="w-12 h-12"
+              style="background-image: url(./images/fare.png)"
+            ></div>
+            <h2>550 Taka</h2>
+            <p>Per Seat</p>
+          </div>
+        </div>
+      </div>
+      <!-- Seat layout Start -->
+        
+        <!-- Seat layout End -->
+    </section>
     
-</body>
+  </body>
 </html>
