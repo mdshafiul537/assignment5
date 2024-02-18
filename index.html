@@ -40,6 +40,8 @@
               "light-green-200": "rgba(29,209,0, 0.2)",
               "light-green-100": "rgba(29,209,0, 0.1)",
               "c-orange": "#FFBF0F",
+              "cus-gray": "#7d7f85",
+              "light-gray": "#f7f8f8",
               "rose-pink": "#F78C9C",
               "white-800": "rgba(255,255,255,0.8)",
               "white-700": "rgba(255,255,255,0.7)",
@@ -50,6 +52,19 @@
         },
       };
     </script>
+    <style>
+      .available {
+        background-color: #f7f8f8;
+        color: #7d7f85;
+        cursor: pointer;
+      }
+
+      .selected {
+        background-color: #1dd100;
+        color: #fff;
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body class="roboto-sans">
     <header class="container mx-auto">
@@ -163,7 +178,7 @@
     </section>
 
     <section class="w-full">
-      <div class="rounded-t-xl border-[#1dd100] border-2 bg-[#f7f8f8] p-5">
+      <div class="rounded-t-xl border-light-green border-2 bg-light-gray p-5">
         <div class="mt-8 items-center text-center">
           <h1 class="text-4xl font-bold">P.H Paribahan</h1>
           <p class="my-5 text-lg font-medium">
@@ -172,10 +187,11 @@
           </p>
         </div>
 
-        <!-- Calculate Start -->
+        <!-- Route & Price Start -->
         <div
           class="card w-full box-border flex flex-row items-center justify-between bg-white"
         >
+          <!-- Route Start -->
           <div class="card-body w-4/5">
             <div class="flex flex-row items-center mb-5">
               <div class="w-3/4">
@@ -188,7 +204,7 @@
             </div>
 
             <div class="card w-full">
-              <div class="card-body bg-[#f7f8f8] rounded-2xl">
+              <div class="card-body bg-light-gray rounded-2xl">
                 <div
                   class="flex flex-row justify-between gap-2 px-4 border-b-2 border-dashed py-4 mb-4"
                 >
@@ -222,6 +238,9 @@
               </div>
             </div>
           </div>
+          <!-- Route End -->
+
+          <!-- ticket Price Start-->
           <div class="calculateamount w-1/5">
             <div
               class="w-12 h-12"
@@ -230,12 +249,535 @@
             <h2>550 Taka</h2>
             <p>Per Seat</p>
           </div>
+          <!-- ticket Price End-->
+        </div>
+        <!-- Route & Price End -->
+      </div>
+
+      <!-- Seat layout & Calculate Start -->
+
+      <div
+        class="card w-full flex flex-row bg-white justify-between items-center"
+      >
+        <div
+          class="card-body flex flex-row justify-between w-full box-border gap-4 rounded-xl"
+        >
+          <!-- Seat Layout Start-->
+          <div
+            class="flex flex-col gap-4 w-2/3 bg-white border-dashed border-r-2 px-6"
+          >
+            <div
+              class="w-full font-semibold text-2xl border-b-2 border-dashed border-gray-500 p-5"
+            >
+              <h3>Select Your Seat</h3>
+            </div>
+            <div
+              class="font-semibold text-lg border-b-2 border-dashed border-gray-500 py-2 flex flex-row justify-between"
+            >
+              <div>Available</div>
+              <div>Selected</div>
+            </div>
+            <!-- Seats Start -->
+            <div
+              class="grid grid-rows-[repeat(11,_1fr)] grid-cols-[40px_repeat(5,_1fr)] gap-4 text-cus-gray"
+            >
+              <div class="col-span-6 flex flex-row-reverse">
+                <div
+                  class="w-24 h-14 flex bg-light-gray justify-center items-center rounded-md"
+                >
+                  <img class="w-10" src="/images/steering-2.png" />
+                </div>
+              </div>
+              <!-- A Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                A
+              </div>
+              <div
+                class="rounded-lg flex flex-col items-center justify-center text-lg font-bold available selected"
+              >
+                A1
+              </div>
+              <div
+                class="rounded-lg flex flex-col items-center justify-center text-lg font-bold available"
+              >
+                A2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg flex flex-col items-center justify-center text-lg font-bold available"
+              >
+                A3
+              </div>
+              <div
+                class="rounded-lg flex flex-col items-center justify-center text-lg font-bold available"
+              >
+                A4
+              </div>
+              <!-- A Row End -->
+
+              <!-- B Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                B
+              </div>
+              <div
+                class="rounded-lg flex flex-col items-center justify-center text-lg font-bold available"
+              >
+                B1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                B2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                B3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                B4
+              </div>
+              <!-- B Row End -->
+
+              <!-- C Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                C
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                C1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                C2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                C3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                C4
+              </div>
+              <!-- C Row End -->
+
+              <!-- D Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                D
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                D1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                D2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                D3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                D4
+              </div>
+              <!-- D Row End -->
+
+              <!-- E Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                E
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                E1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                E2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                E3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                E4
+              </div>
+              <!-- E Row End -->
+
+              <!-- F Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                F
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                F1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                F2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                F3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                F4
+              </div>
+              <!-- F Row End -->
+
+              <!-- G Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                G
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                G1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                G2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                G3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                G4
+              </div>
+              <!-- G Row End -->
+
+              <!-- H Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                H
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                H1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                H2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                H3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                H4
+              </div>
+              <!-- H Row End -->
+
+              <!-- J Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                I
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                I1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                I2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                I3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                I4
+              </div>
+              <!-- I Row End -->
+
+              <!-- J Row Start-->
+              <div
+                class="flex flex-col text-right justify-center pr-3 text-lg font-bold"
+              >
+                J
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                J1
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                J2
+              </div>
+              <div class="rounded-lg flex flex-col items-center justify-center">
+                &nbsp;
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                J3
+              </div>
+              <div
+                class="rounded-lg text-lg font-bold available flex flex-col items-center justify-center"
+              >
+                J4
+              </div>
+              <!-- J Row End -->
+            </div>
+            <!-- Seats End -->
+          </div>
+          <!-- Seat Layout End-->
+
+          <!-- Calculate Selected Seat Start-->
+          <div class="w-1/3 p-6">
+            <div class="w-full font-semibold border-gray-500 py-2">
+              <h4 class="text-xl border-b-2 border-dashed my-4 py-4">
+                Your Selected Seat Price Calculated
+              </h4>
+              <!-- Calculate Card Start -->
+              <div class="card w-full bg-light-gray rounded-lg">
+                <div class="card-body">
+                  <div
+                    class="flex flex-row justify-between items-center gap-4 border-b border-dashed py-2 font-bold"
+                  >
+                    <div class="">
+                      Seat
+                      <div class="badge bg-light-green">2</div>
+                    </div>
+                    <div class="">Class</div>
+                    <div class="">Price</div>
+                  </div>
+                  <div
+                    class="flex flex-row justify-between items-center gap-4 py-2 font-medium"
+                  >
+                    <div class="">C3</div>
+                    <div class="">Economy</div>
+                    <div class="">550</div>
+                  </div>
+                  <div
+                    class="flex flex-row justify-between items-center gap-4 py-2"
+                  >
+                    <div class="">C4</div>
+                    <div class="">Economoy</div>
+                    <div class="">550</div>
+                  </div>
+
+                  <div
+                    class="flex flex-row justify-between items-center gap-4 py-2 font-bold border-t border-solid"
+                  >
+                    <div class="">Total Price</div>
+                    <div class="">BDT 1100</div>
+                  </div>
+
+                  <div
+                    class="flex flex-row justify-between items-center py-2 font-bold bg-white rounded-lg px-2 box-border"
+                  >
+                    <div class="w-2/3">
+                      <input
+                        type="text"
+                        id="coupon"
+                        class="outline-none border-none w-full"
+                        placeholder="Have any coupon?"
+                      />
+                    </div>
+                    <div class="p-1 w-1/3">
+                      <button
+                        class="bg-light-green text-white font-medium text-base py-1 rounded-md w-full"
+                        id="btnCoupon"
+                      >
+                        Apply
+                      </button>
+                    </div>
+                  </div>
+                  <div
+                    class="flex flex-row justify-between items-center gap-4 py-2 font-bold border-t border-solid"
+                  >
+                    <div class="">Grand Total</div>
+                    <div class="">BDT 1100</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Calculate Card End -->
+
+              <!-- Passenger Info Start-->
+              <div class="card shrink-0 w-full max-w-sm">
+                <form class="card-body">
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Passenger Name*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter your Name"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Phone Number*</span>
+                    </label>
+                    <input
+                      type="text"
+                      placeholder="Enter your Number"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-control">
+                    <label class="label">
+                      <span class="label-text">Email ID</span>
+                    </label>
+                    <input
+                      type="email"
+                      placeholder="Enter your email ID"
+                      class="input input-bordered"
+                      required
+                    />
+                  </div>
+
+                  <div class="form-control mt-6">
+                    <button class="btn bg-light-green text-white outline-none">
+                      Next
+                    </button>
+                  </div>
+                </form>
+              </div>
+              <!-- Passenger Info End-->
+            </div>
+          </div>
+          <!-- Calculate Selected Seat End-->
         </div>
       </div>
-      <!-- Seat layout Start -->
-        
-        <!-- Seat layout End -->
+
+      <!-- Seat layout & Calculate Start  -->
     </section>
-    
+
+    <footer class="bg-[#030712]">
+      <div class="container mx-auto">
+        <div class="flex flex-row justify-between text-white pt-20">
+          <div class="flex flex-col gap-6 w-1/2">
+            <h2 class="text-4xl mb-4">P-Ticket</h2>
+            <p class="text-lg font-normal text-[rgba(255,255,255,0.8)] pb-4">
+              P-Ticket is a digital platform to make your daily commuting
+              better.
+            </p>
+          </div>
+
+          <div class="flex flex-col justify-center items-center w-1/2">
+            <h2 class="text-xl font-semibold my-3 self-end">
+              Download our app
+            </h2>
+            <div
+              class="rounded-lg border border-[#b0b0b0] flex flex-col p-3 mb-6 self-end"
+            >
+              <a href="#">
+                <div class="flex flex-row gap-3">
+                  <div class="w-16 h-16">
+                    <img src="/images/playstore.png" class="w-full" />
+                  </div>
+                  <div class="text-white">
+                    <h4 class="text-lg">GET IT ON</h4>
+                    <h4 class="text-4xl">Google Play</h4>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-row border-t border-dashed">
+          <div class="w-1/2">
+            <h5 class="text-base font-normal text-[rgba(255,255,255,0.7)] py-4">
+              @all rights reserved, P-Ticket services limited.2024
+            </h5>
+          </div>
+          <div class="w-1/2">
+            <ul
+              class="flex flex-row justify-between w-full gap-5 box-border px-5 py-4 text-white"
+            >
+              <li><a href="#">Terms & condition</a></li>
+              <li><a href="#">Return & refund policy</a></li>
+              <li><a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>
