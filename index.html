@@ -77,8 +77,6 @@
         border-top: 2px solid;
         border-radius: 30px 30px 0px 0px;
       }
-
-      
     </style>
   </head>
   <body class="font-['Roboto']">
@@ -137,9 +135,7 @@
         style="background-image: url(./images/banner.png)"
       >
         <div class="hero-overlay bg-opacity-60 rounded-3xl"></div>
-        <div
-          class="hero-content text-center text-neutral-content box-border sm:px-3"
-        >
+        <div class="hero-content text-center text-neutral-content box-border">
           <div class="h-[550px] flex flex-col justify-center items-center">
             <h1 class="mb-5 text-6xl font-extrabold">End-to-End Travel with</h1>
             <h1 class="mb-5 text-6xl font-extrabold text-light-green">
@@ -160,9 +156,11 @@
       <div class="text-center text-black">
         <h2 class="font-semibold text-xl">Best offers for you</h2>
       </div>
-      <div class="flex flex-row gap-4 items-center">
+      <div
+        class="flex sm:flex-col lg:flex-row gap-4 items-center sm:gap-8 sm:px-5 lg:px-0 box-border"
+      >
         <div
-          class="box-border bg-[#ffbf0f] w-1/2 flex flex-row justify-around rounded-lg px-4"
+          class="box-border bg-[#ffbf0f] sm:w-full lg:w-1/2 xl:w-1/2 w-1/2 flex flex-row justify-around rounded-lg px-4"
         >
           <div
             class="w-3/5 z-10 bg-right bg-no-repeat py-12"
@@ -183,13 +181,13 @@
         </div>
 
         <div
-          class="bg-rose-500 w-1/2 flex flex-row gap-3 justify-around rounded-lg box-border px-4 relative"
+          class="bg-rose-500 sm:w-full lg:w-1/2 xl:w-1/2 w-1/2 flex flex-row gap-3 justify-around rounded-lg box-border px-4 relative"
         >
           <div
-            class="box-border w-3/5 z-10 bg-right bg-no-repeat py-12"
+            class="box-border w-3/5 z-30 sm:gap-0 gap-2 lg:gap-2 bg-no-repeat py-12 bg-right lg:bg-right sm:bg-[right_-10px_top_0px]"
             style="background-image: url('./images/cupon-devider.png')"
           >
-            <div class="w-11/12 flex flex-col gap-2">
+            <div class="flex flex-col gap-2 z-30">
               <h3 class="text-4xl font-black">20% OFF</h3>
               <h4 class="text-xl font-semibold">on your next purchase</h4>
               <p class="text-lg font-medium">use by January 2024</p>
@@ -197,7 +195,7 @@
           </div>
 
           <div class="w-2/5 py-12">
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2 w-11/12 z-10">
               <h2 class="text-3xl font-bold">Couple 20</h2>
               <p class="text-xl font-medium">Coupon Code</p>
             </div>
@@ -225,11 +223,11 @@
 
         <!-- Route & Price Start -->
         <div
-          class="card w-full box-border flex flex-row items-center justify-between bg-white"
+          class="card w-full box-border flex sm:flex-col lg:flex-row flex-row items-center justify-between bg-white"
         >
           <!-- Route Start -->
           <div
-            class="card-body w-4/5 bg-no-repeat bg-right z-40 pl-8 pr-24 py-6"
+            class="sm:bg-transparent sm:bg-none lg:bg-inherit card-body w-4/5 bg-no-repeat bg-right z-40 sm:pl-1 sm:pr-2 sm:py-6 lg:pl-8 lg:pr-24 lg:py-6 pl-8 pr-24 py-6"
             style="background-image: url('./images/info-devider.png')"
           >
             <div class="flex flex-row items-center box-border gap-4 mt-5">
@@ -238,8 +236,14 @@
                   class="bg-no-repeat pl-24"
                   style="background-image: url('./images/bus-logo.png')"
                 >
-                  <h2 class="text-3xl font-bold">A Paribahan</h2>
-                  <small class="text-lg font-medium">Coach-005 | None Ac</small>
+                  <h2
+                    class="text-3xl font-bold lg:text-3xl lg:font-bold sm:text-2xl sm:font-semibold"
+                  >
+                    A Paribahan
+                  </h2>
+                  <small class="text-lg lg:text-lg sm:font-normal"
+                    >Coach-005 | None Ac</small
+                  >
                 </div>
               </div>
               <div
@@ -293,14 +297,18 @@
 
           <!-- ticket Price Start-->
           <div
-            class="flex flex-col gap-4 w-1/5 font-['Raleway'] justify-center items-center"
+            class="flex sm:flex-row lg:flex-col flex-col gap-4 w-1/5 font-['Raleway'] justify-center items-center sm:pb-5 lg:pb-0"
           >
             <div
               class="w-12 h-12"
               style="background-image: url(./images/fare.png)"
             ></div>
-            <h2 class="text-3xl font-bold">550 Taka</h2>
-            <p class="text-2xl font-semibold">Per Seat</p>
+            <h2 class="lg:text-wrap sm:text-nowrap text-3xl font-bold">
+              550 Taka
+            </h2>
+            <p class="text-2xl font-semibold lg:text-wrap sm:text-nowrap">
+              Per Seat
+            </p>
           </div>
           <!-- ticket Price End-->
         </div>
@@ -310,14 +318,14 @@
       <!-- Seat layout & Calculate Start -->
 
       <div
-        class="card w-full flex flex-row bg-white justify-between items-center"
+        class="card w-full flex flex-row lg:flex-row sm:flex-col bg-white justify-between items-center"
       >
         <div
-          class="card-body flex flex-row justify-between w-full box-border gap-4 rounded-xl"
+          class="card-body flex flex-row lg:flex-row sm:flex-col justify-between w-full box-border gap-4 rounded-xl"
         >
           <!-- Seat Layout Start-->
           <div
-            class="flex flex-col gap-4 w-2/3 bg-white border-dashed border-r-2 px-6"
+            class="flex flex-col gap-4 w-2/3 lg:w-2/3 sm:w-full bg-white border-dashed border-r-2 px-6"
           >
             <div
               class="w-full font-semibold text-2xl border-b-2 border-dashed border-gray-500 p-5"
@@ -666,7 +674,7 @@
           <!-- Seat Layout End-->
 
           <!-- Calculate Selected Seat Start-->
-          <div class="w-1/3 p-6">
+          <div class="w-1/3 p-6 lg:w-1/3 sm:w-full">
             <div class="w-full font-semibold border-gray-500 py-2">
               <h4 class="text-xl border-b-2 border-dashed my-4 py-4">
                 Your Selected Seat Price Calculation
@@ -709,7 +717,7 @@
                       </div>
                     </div>
                     <div
-                    id="coupon-input"
+                      id="coupon-input"
                       class="flex flex-row justify-between items-center py-2 font-bold bg-white rounded-lg px-2 box-border"
                     >
                       <div class="w-2/3">
@@ -850,8 +858,12 @@
 
     <footer class="bg-[#030712]">
       <div class="container mx-auto">
-        <div class="flex flex-row justify-between text-white pt-20">
-          <div class="flex flex-col gap-6 w-1/2">
+        <div
+          class="flex flex-row lg:flex-row sm:flex-col gap-4 sm:gap-6 justify-between lg:justify-between sm:justify-center text-white pt-20"
+        >
+          <div
+            class="flex flex-col lg:justify-between sm:justify-center sm:items-center lg:items-start gap-6 w-1/2 lg:w-1/2 sm:w-full"
+          >
             <h2 class="text-4xl mb-4">A-Ticket</h2>
             <p class="text-lg font-normal text-[rgba(255,255,255,0.8)] pb-4">
               A-Ticket is a digital Bus booking platform.
@@ -863,7 +875,7 @@
               Download our app
             </h2>
             <div
-              class="rounded-lg border border-[#b0b0b0] flex flex-col p-3 mb-6 self-end"
+              class="rounded-lg border border-[#b0b0b0] flex flex-col p-3 mb-6 self-end lg:self-end sm:self-center sm:items-center lg:items-start"
             >
               <a href="#">
                 <div class="flex flex-row gap-3">
