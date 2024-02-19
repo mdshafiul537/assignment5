@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
   const couponBtnElm = document.querySelector("#btnCoupon");
   couponBtnElm.addEventListener("click", (event) => {
-    applyCoupon();
+    applyCoupon(selectedSeats);
   });
 
   document.querySelector(".seats")?.addEventListener("click", (e) => {
@@ -21,9 +21,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
     const passNameElm = document.querySelector("#passenger-name");
     const passPhoneElm = document.querySelector("#passenger-phone");
-
-    console.log("passNameElm, ", passNameElm);
-    console.log("passPhoneElm, ", passPhoneElm);
 
     const passengerName = passNameElm.value;
     const passengerPhone = passPhoneElm.value;
@@ -40,9 +37,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       passPhoneElm.classList.remove("outline", "outline-red-500");
     }
 
-    console.log("passengerName ", passengerName);
-    console.log("passengerPhone ", passengerPhone);
-
     if (passengerName && passengerPhone) {
       seatBookElm.classList.add("modal-open");
     }
@@ -55,7 +49,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 });
 
-function applyCoupon() {
+function applyCoupon(seats) {
   const couponElm = document.querySelector("#coupon");
   const grandTotalElm = document.querySelector("#grand-total");
   const totalPriceElm = document.querySelector(".total-price");
@@ -63,7 +57,15 @@ function applyCoupon() {
   let grandTotal = 0,
     totalPrice = Number(totalPriceElm?.innerText);
 
-  if (couponElm && !isNaN(totalPrice)) {
+  grandTotal = totalPrice;
+
+  if (seats.length < 4) {
+    couponArea.querySelector(
+      ".coupon-invalid"
+    ).innerHTML = `Minimum 4 seat needed to Apply Coupon. Please, Select 4 seat and try again!!`;
+  }
+
+  if (couponElm && !isNaN(totalPrice) && seats.length === 4) {
     const coupon = couponElm.value;
     let discount = 0,
       discountPar = 0;
@@ -84,12 +86,22 @@ function applyCoupon() {
     grandTotal = totalPrice - discount;
 
     if (discount > 0) {
-      couponArea.innerHTML = `<div
-      class="flex flex-row justify-between items-center gap-4 py-2 font-bold border-t border-solid"
-    >
-      <div class="">Total Discount (${discountPar}%)</div>
-      <div class="">BDT <span>${discount}</span> </div>
-    </div>`;
+      const discountCal = couponArea?.querySelector("#dicount-cal");
+      const couponInput = couponArea?.querySelector("#coupon-input");
+
+      couponArea.querySelector(".coupon-invalid").innerHTML = ``;
+
+      if (couponInput) {
+        couponInput.classList.remove("flex");
+        couponInput.classList.add("hidden");
+      }
+
+      if (discountCal) {
+        discountCal.classList.remove("hidden");
+        discountCal.classList.add("flex");
+        discountCal.querySelector(".dicount-par").innerText = discountPar;
+        discountCal.querySelector(".total-discount").innerText = discount;
+      }
     }
   }
 
@@ -135,13 +147,13 @@ function onSeatsAction(e, selectedSeats = [], seats = []) {
         price: 550,
       });
     } else if (element.classList.contains("selected")) {
-      console.log("selected ");
       element.classList.remove("selected");
       element.classList.add("available");
-      console.log("available Remove ", e);
       removeSeat(selectedSeats, element.innerText);
     }
   }
+
+  restCoupon();
 
   calculatePrice(selectedSeats);
 }
@@ -169,5 +181,21 @@ function calculatePrice(seats) {
     totalPrice += item.price;
   });
   document.querySelector(".total-price").innerText = totalPrice;
+  document.querySelector("#grand-total").innerText = totalPrice;
   selectedSeats.innerHTML = items;
+}
+
+function restCoupon() {
+  const discountCal = document.querySelector("#dicount-cal");
+  const couponInput = document.querySelector("#coupon-input");
+
+  if (couponInput) {
+    couponInput.classList.add("flex");
+    couponInput.classList.remove("hidden");
+  }
+
+  if (discountCal) {
+    discountCal.classList.add("hidden");
+    discountCal.classList.remove("flex");
+  }
 }

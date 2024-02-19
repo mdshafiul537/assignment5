@@ -77,6 +77,8 @@
         border-top: 2px solid;
         border-radius: 30px 30px 0px 0px;
       }
+
+      
     </style>
   </head>
   <body class="font-['Roboto']">
@@ -135,7 +137,9 @@
         style="background-image: url(./images/banner.png)"
       >
         <div class="hero-overlay bg-opacity-60 rounded-3xl"></div>
-        <div class="hero-content text-center text-neutral-content">
+        <div
+          class="hero-content text-center text-neutral-content box-border sm:px-3"
+        >
           <div class="h-[550px] flex flex-col justify-center items-center">
             <h1 class="mb-5 text-6xl font-extrabold">End-to-End Travel with</h1>
             <h1 class="mb-5 text-6xl font-extrabold text-light-green">
@@ -694,6 +698,18 @@
                       class="coupon-invalid text-sm text-orange-800 font-normal"
                     ></span>
                     <div
+                      id="dicount-cal"
+                      class="hidden flex-row justify-between items-center gap-4 py-2 font-bold border-t border-solid"
+                    >
+                      <div class="">
+                        Total Discount (<span class="dicount-par">0</span> %)
+                      </div>
+                      <div class="">
+                        BDT <span class="total-discount">0</span>
+                      </div>
+                    </div>
+                    <div
+                    id="coupon-input"
                       class="flex flex-row justify-between items-center py-2 font-bold bg-white rounded-lg px-2 box-border"
                     >
                       <div class="w-2/3">
